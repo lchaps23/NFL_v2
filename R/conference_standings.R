@@ -1,7 +1,7 @@
 conference_standings <- function(
     season,
-    rounds = "REG",
-    ranks = "CONF",
+    rounds = c("REG", "WC", "DIV", "CON", "SB"),
+    ranks = "DRAFT",
     tiebreaker_depth = "SOS",
     conference = NULL,
     verbosity = "NONE"
