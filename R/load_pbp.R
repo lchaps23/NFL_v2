@@ -1,6 +1,5 @@
-load_pbp <- function(
-    seasons = 1999:2025,
-    cache = TRUE
+load_pbp_data <- function(
+    seasons = 1999:2025
 ) {
-  nflreadr::load_pbp(seasons, cache = cache)
+  nflreadr::load_pbp(seasons)
 }
