@@ -24,7 +24,7 @@ season_division_race <- function(
         season       = season,
         through_week = wk,
         rounds       = rounds,
-        ranks        = "DRAFT",
+        ranks        = "CONF",
       ) |> 
         
         dplyr::filter(
@@ -33,6 +33,10 @@ season_division_race <- function(
         
         dplyr::mutate(
           week = wk
+        ) |> 
+        
+        dplyr::rename(
+          team_abbr = team
         )
     })
 }
