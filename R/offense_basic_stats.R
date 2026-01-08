@@ -13,12 +13,13 @@ offense_basic_stats <- function(
       pass_att = sum(attempts),
       pass_cmp = sum(completions),
       cmp_pct  = round(pass_cmp / pass_att *100, 1),
-      pass_yds = sum(passing_yards),
+      pass_yds = sum(passing_yards + sack_yards_lost),
       yds_att  = round(pass_yds / pass_att, 1),
       pass_tds = sum(passing_tds),
       
-      runs     = sum(carries),
+      carries  = sum(carries),
       rush_yds = sum(rushing_yards),
+      ypc      = round(rush_yds / carries, 1),
       rush_tds = sum(rushing_tds),
       
       total_yds = pass_yds + rush_yds,
