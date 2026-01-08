@@ -7,7 +7,9 @@ load_player_stats_data <- function(
   ) |> 
     
     dplyr::filter(
-      season_type == "REG"
+      season_type == "REG",
+      !is.na(team),
+      !is.na(opponent_team)
     )
   
 }

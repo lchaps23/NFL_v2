@@ -37,6 +37,10 @@ defense_basic_stats <- function(
       .groups = "drop"
     ) |> 
     
+    dplyr::rename(
+      team = opponent_team
+    ) |> 
+    
     dplyr::arrange(
       total_yds
     )
