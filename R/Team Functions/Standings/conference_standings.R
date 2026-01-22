@@ -29,6 +29,15 @@ conference_standings <- function(
   }
   
   standings |> 
+    
+    dplyr:: mutate(
+      win_pct = round(win_pct, 3),
+      div_pct = round(div_pct, 3),
+      conf_pct = round(conf_pct, 3),
+      sov      = round(sov, 3),
+      sos      = round(sos, 3)
+    ) |> 
+    
     dplyr::arrange(
       conf_rank
     )
