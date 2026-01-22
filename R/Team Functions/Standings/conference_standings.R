@@ -1,3 +1,5 @@
+source("R/Data Loaders/load_schedule_data.R")
+
 conference_standings <- function(
     season,
     rounds = c("REG", "WC", "DIV", "CON", "SB"),
@@ -36,6 +38,10 @@ conference_standings <- function(
       conf_pct = round(conf_pct, 3),
       sov      = round(sov, 3),
       sos      = round(sos, 3)
+    ) |> 
+    
+    dplyr::rename(
+      team_abbr = team
     ) |> 
     
     dplyr::arrange(
